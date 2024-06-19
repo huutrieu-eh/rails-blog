@@ -1,0 +1,13 @@
+- unless comment.archived?
+  %p
+    %strong Commenter:
+    %br
+    = comment.commenter
+
+  %p
+    %strong Comment:
+    %br
+    = comment.body
+
+  %p
+    = link_to "Destroy Comment", [comment.article, comment], data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}

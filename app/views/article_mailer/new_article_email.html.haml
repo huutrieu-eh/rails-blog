@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1="You have just created a new v1: #{@article.title}"
+    %br
+    %p= "To view the v1, see #{link_to 'here',@url}"
+    %p Thanks!
+    = image_tag attachments['eh-logo.jpeg'].url
+
