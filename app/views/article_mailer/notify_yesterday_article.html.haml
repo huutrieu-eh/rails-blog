@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1="These are our latest articles"
+    %br
+    %ul
+      - @articles.each do |article|
+        %li= link_to article.title, "http://0.0.0.0:3000/articles/#{article.id}"
+    %p Thanks!
+    = image_tag attachments['eh-logo.jpeg'].url
+

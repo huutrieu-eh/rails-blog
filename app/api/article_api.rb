@@ -17,7 +17,13 @@ class ArticleApi < Grape::API
       requires :status, type: String
     end
     post do
-      Article.create!(params)
+      service = ArticleCreator.new(params)
+      service.call
+      if service.success?
+        service.article
+      else
+        error!('Bad Request', 400)
+      end
     end
 
     route_param :id do
